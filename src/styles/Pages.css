@@ -1,0 +1,319 @@
+.equip-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.equip-card {
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  padding: 1.75rem;
+  display: grid;
+  gap: 1.1rem;
+  transition: border-color 0.3s var(--ease), transform 0.35s var(--ease);
+}
+
+.equip-card:hover {
+  border-color: rgba(201, 120, 58, 0.55);
+  transform: translateY(-3px);
+}
+
+.equip-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.equip-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 0.35rem 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+.badge--live {
+  color: var(--accent-deep);
+  background: rgba(201, 120, 58, 0.12);
+}
+
+.badge--soon {
+  color: var(--slate);
+  background: var(--paper-warm);
+}
+
+.equip-meta {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.equip-meta dt {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.equip-meta dd {
+  margin-top: 0.2rem;
+  color: var(--text-muted-light);
+  font-size: 0.98rem;
+}
+
+.services-page-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+}
+
+.service-block {
+  border-top: 1px solid var(--line-light);
+  padding: 1.5rem 0;
+}
+
+.service-block h3 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.service-block p {
+  margin-top: 0.45rem;
+  color: var(--text-muted-light);
+}
+
+.side-panel {
+  background: var(--ink);
+  color: var(--text-on-dark);
+  padding: 2rem 1.75rem;
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--nav-h) + 1rem);
+}
+
+.side-panel h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.side-panel li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line-dark);
+  color: var(--text-muted-dark);
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.partner-card {
+  padding: 2rem 1.75rem;
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-top: 3px solid var(--accent);
+}
+
+.partner-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.partner-card p {
+  color: var(--text-muted-light);
+}
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-visual {
+  min-height: 420px;
+  background:
+    linear-gradient(160deg, rgba(11, 12, 14, 0.35), rgba(11, 12, 14, 0.65)),
+    url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80")
+      center / cover no-repeat;
+  border: 1px solid var(--line-light);
+  position: relative;
+}
+
+.about-visual__caption {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  padding: 1rem 1.1rem;
+  background: rgba(11, 12, 14, 0.88);
+  color: var(--text-on-dark);
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.about-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0.7rem 0 1.1rem;
+}
+
+.about-copy p {
+  color: var(--text-muted-light);
+  margin-bottom: 1rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  padding: 1.1rem;
+  background: var(--paper-warm);
+  border: 1px solid var(--line-light);
+}
+
+.stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--accent-deep);
+  line-height: 1;
+}
+
+.stat span {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted-light);
+}
+
+.form-shell {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-intro {
+  padding: 2rem;
+  background: var(--ink);
+  color: var(--text-on-dark);
+}
+
+.form-intro h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0.7rem 0 1rem;
+}
+
+.form-intro p,
+.form-intro li {
+  color: var(--text-muted-dark);
+}
+
+.form-intro ul {
+  margin: 1.25rem 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.form-intro li::before {
+  content: "— ";
+  color: var(--accent);
+}
+
+.form-panel {
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  padding: 2rem 1.75rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-tile {
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line-light);
+}
+
+.contact-tile h3 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 0.55rem;
+}
+
+.contact-tile p {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 900px) {
+  .equip-grid,
+  .services-page-grid,
+  .partner-grid,
+  .about-split,
+  .form-shell,
+  .contact-grid,
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panel {
+    position: static;
+  }
+}
