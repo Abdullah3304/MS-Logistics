@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container site-footer__grid">
         <div className="site-footer__brand">
-          <img src="/images/logo.png" alt="MS Logistics" />
+          <img src="/images/logo.png?v=3" alt="MS Logistics" />
           <h3>MS Logistics</h3>
           <p>
             Dependable freight transportation from Houston, TX — built for
@@ -61,7 +61,7 @@ export default function Footer() {
 
       <div className="container site-footer__bottom">
         <span>
-          © {year} {company.name}. All rights reserved.
+          © {company.name}. All rights reserved.
         </span>
         <span>
           Est. {company.founded} · {company.location} · {company.tagline}

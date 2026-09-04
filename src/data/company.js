@@ -16,8 +16,8 @@ export const company = {
   // --- Replace with customer-provided values ---
   usdot: "USDOT #0000000",
   mc: "MC-000000",
-  phone: "(713) 555-0148",
-  email: "dispatch@mslogistics.com",
+  phone: "(832) 427-6420",
+  email: "m.miledispatch@gmail.com",
   address: "1000 Commerce Street, Suite 200, Houston, TX 77002",
   hours: "Mon–Fri 7:00 AM – 7:00 PM CT",
   gpsTracking: true,

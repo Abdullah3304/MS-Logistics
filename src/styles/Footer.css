@@ -12,9 +12,13 @@
 }
 
 .site-footer__brand img {
-  width: 88px;
+  width: min(320px, 100%);
   height: auto;
-  background: #000;
+  max-height: 200px;
+  object-fit: contain;
+  object-position: left top;
+  background: transparent;
+  border: none;
   margin-bottom: 1.1rem;
 }
 

@@ -31,14 +31,29 @@ export default function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
+
+      const raw = await res.text();
+      let data = {};
+      try {
+        data = raw ? JSON.parse(raw) : {};
+      } catch {
+        throw new Error(
+          "Server returned an invalid response. Make sure the API is running (npm run dev)."
+        );
+      }
+
       if (!res.ok) throw new Error(data.message || "Request failed");
       setStatus({ type: "ok", message: data.message });
       setForm(initial);
     } catch (err) {
+      const isNetwork =
+        err.message?.includes("Failed to fetch") ||
+        err.message?.includes("NetworkError");
       setStatus({
         type: "err",
-        message: err.message || "Unable to submit right now.",
+        message: isNetwork
+          ? "Cannot reach the server. Start the API with npm run dev and try again."
+          : err.message || "Unable to submit right now.",
       });
     } finally {
       setLoading(false);

@@ -21,7 +21,7 @@
       rgba(11, 12, 14, 0.45) 100%
     ),
     radial-gradient(ellipse 70% 50% at 70% 40%, rgba(201, 120, 58, 0.22), transparent 60%),
-    url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=80")
+    url("/images/hero-home.png")
       center / cover no-repeat;
   transform: scale(1.04);
   animation: hero-zoom 18s var(--ease) both;
