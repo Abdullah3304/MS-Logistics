@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { company, navLinks } from "../data/company";
+import { navLinks } from "../data/company";
 import "../styles/Navbar.css";
 
 export default function Navbar() {
@@ -23,17 +23,13 @@ export default function Navbar() {
 
   return (
     <header className={`site-header ${scrolled || open ? "site-header--solid" : ""}`}>
-      <div className="container site-header__inner">
+      <div className="site-header__inner">
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
           <img
             className="brand__mark"
-            src="/images/logo.png"
-            alt="MS Logistics logo"
+            src="/images/logo.png?v=3"
+            alt="MS Logistics — Driven to Deliver"
           />
-          <span className="brand__text">
-            <span className="brand__name">MS Logistics</span>
-            <span className="brand__tag">{company.tagline}</span>
-          </span>
         </Link>
 
         <button
