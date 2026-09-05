@@ -16,7 +16,7 @@ export const company = {
   // --- Replace with customer-provided values ---
   usdot: "USDOT #0000000",
   mc: "MC-000000",
-  phone: "(832) 427-6420",
+  phone: "(786) 969-0265",
   email: "m.miledispatch@gmail.com",
   address: "1000 Commerce Street, Suite 200, Houston, TX 77002",
   hours: "Mon–Fri 7:00 AM – 7:00 PM CT",
@@ -86,6 +86,7 @@ export const equipment = [
     dimensions: '26\' box · ~1,400–1,800 cu ft · up to ~10,000 lbs',
     liftgate: "Liftgate available",
     confirmed: true,
+    image: "/images/fleet-box-truck.jpg",
   },
   {
     id: "dry-van",
@@ -94,17 +95,19 @@ export const equipment = [
       "General freight, manufacturing, retail, and full-truckload lanes",
     coverage: "Texas regional · OTR nationwide",
     dimensions: "53' dry van · ~3,800 cu ft · up to ~45,000 lbs",
-    liftgate: "No liftgate (dock / ground load)",
+    liftgate: "Swing Doors (dock / ground load)",
     confirmed: true,
+    image: "/images/fleet-dry-van.jpg",
   },
   {
     id: "reefer",
     name: "Reefer",
     serviceType: "Temperature-controlled freight",
     coverage: "Texas regional · OTR nationwide",
-    dimensions: "53' reefer · temp-controlled · up to ~43,000 lbs",
-    liftgate: "No liftgate (dock load)",
+    dimensions: "53' reefer · temp-controlled · up to ~45,000 lbs",
+    liftgate: "Swing Door (dock load)",
     confirmed: true,
+    image: "/images/fleet-reefer.jpg",
   },
   {
     id: "flatbed",
@@ -114,6 +117,7 @@ export const equipment = [
     dimensions: "48' flatbed · up to ~48,000 lbs",
     liftgate: "N/A — tarps & straps available",
     confirmed: true,
+    image: "/images/fleet-flatbed.jpg",
   },
 ];
 

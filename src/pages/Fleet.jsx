@@ -42,37 +42,47 @@ export default function Fleet() {
 
           <div className="equip-grid">
             {equipment.map((unit) => (
-              <article className="equip-card" key={unit.id}>
-                <div className="equip-card__top">
-                  <h3>{unit.name}</h3>
-                  <span className="badge badge--live">In Service</span>
+              <article
+                className={`equip-card${unit.image ? " equip-card--media" : ""}`}
+                key={unit.id}
+                style={
+                  unit.image
+                    ? { backgroundImage: `url(${unit.image})` }
+                    : undefined
+                }
+              >
+                <div className="equip-card__body">
+                  <div className="equip-card__top">
+                    <h3>{unit.name}</h3>
+                    <span className="badge badge--live">In Service</span>
+                  </div>
+
+                  <dl className="equip-meta">
+                    <div>
+                      <dt>Service Type</dt>
+                      <dd>{unit.serviceType}</dd>
+                    </div>
+                    <div>
+                      <dt>Coverage Area</dt>
+                      <dd>{unit.coverage}</dd>
+                    </div>
+                    <div>
+                      <dt>Dimensions / Capacity</dt>
+                      <dd>{unit.dimensions}</dd>
+                    </div>
+                    <div>
+                      <dt>Liftgate</dt>
+                      <dd>{unit.liftgate}</dd>
+                    </div>
+                  </dl>
+
+                  <Link
+                    to={`/quote?equipment=${encodeURIComponent(unit.name)}`}
+                    className={`btn btn--full ${unit.image ? "btn--primary" : "btn--dark"}`}
+                  >
+                    Request Capacity
+                  </Link>
                 </div>
-
-                <dl className="equip-meta">
-                  <div>
-                    <dt>Service Type</dt>
-                    <dd>{unit.serviceType}</dd>
-                  </div>
-                  <div>
-                    <dt>Coverage Area</dt>
-                    <dd>{unit.coverage}</dd>
-                  </div>
-                  <div>
-                    <dt>Dimensions / Capacity</dt>
-                    <dd>{unit.dimensions}</dd>
-                  </div>
-                  <div>
-                    <dt>Liftgate</dt>
-                    <dd>{unit.liftgate}</dd>
-                  </div>
-                </dl>
-
-                <Link
-                  to={`/quote?equipment=${encodeURIComponent(unit.name)}`}
-                  className="btn btn--dark btn--full"
-                >
-                  Request Capacity
-                </Link>
               </article>
             ))}
           </div>
