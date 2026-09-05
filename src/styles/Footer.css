@@ -73,10 +73,25 @@
   border-top: 1px solid var(--line-dark);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
   color: var(--text-muted-dark);
   font-size: 0.88rem;
+}
+
+.site-footer__legal {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.site-footer__legal a {
+  color: var(--text-muted-dark);
+}
+
+.site-footer__legal a:hover {
+  color: var(--accent);
 }
 
 @media (max-width: 900px) {

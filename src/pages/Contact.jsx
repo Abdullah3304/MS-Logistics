@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { company } from "../data/company";
+import { company, phoneHref } from "../data/company";
 import "../styles/Pages.css";
 
 const initial = {
@@ -78,11 +78,19 @@ export default function Contact() {
           <div className="contact-grid">
             <div className="contact-tile">
               <h3>Phone</h3>
-              <p>{company.phone}</p>
+              <p>
+                <a className="contact-link" href={phoneHref(company.phone)}>
+                  {company.phone}
+                </a>
+              </p>
             </div>
             <div className="contact-tile">
               <h3>Email</h3>
-              <p>{company.email}</p>
+              <p>
+                <a className="contact-link" href={`mailto:${company.email}`}>
+                  {company.email}
+                </a>
+              </p>
             </div>
             <div className="contact-tile">
               <h3>Location</h3>
