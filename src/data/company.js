@@ -23,6 +23,13 @@ export const company = {
   gpsTracking: true,
 };
 
+/** Digits-only tel: href from a display phone number */
+export function phoneHref(phone) {
+  let digits = String(phone || "").replace(/\D/g, "");
+  if (digits.length === 10) digits = `1${digits}`;
+  return digits ? `tel:+${digits}` : "tel:";
+}
+
 export const trustItems = [
   { label: "USDOT #", value: "0000000" },
   { label: "MC #", value: "MC-000000" },

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { company, navLinks } from "../data/company";
+import { company, navLinks, phoneHref } from "../data/company";
 import "../styles/Footer.css";
 
 export default function Footer() {
@@ -50,8 +50,14 @@ export default function Footer() {
           <h4>Contact</h4>
           <div className="site-footer__meta">
             <p>{company.address}</p>
-            <p>Phone: {company.phone}</p>
-            <p>Email: {company.email}</p>
+            <p>
+              Phone:{" "}
+              <a href={phoneHref(company.phone)}>{company.phone}</a>
+            </p>
+            <p>
+              Email:{" "}
+              <a href={`mailto:${company.email}`}>{company.email}</a>
+            </p>
             <p>
               {company.usdot} · {company.mc}
             </p>
@@ -61,8 +67,12 @@ export default function Footer() {
 
       <div className="container site-footer__bottom">
         <span>
-          © {company.name}. All rights reserved.
+          © {year} {company.name}. All rights reserved.
         </span>
+        <nav className="site-footer__legal" aria-label="Legal">
+          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/terms">Terms of Use</Link>
+        </nav>
         <span>
           Est. {company.founded} · {company.location} · {company.tagline}
         </span>
