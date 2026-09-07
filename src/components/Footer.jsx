@@ -58,9 +58,6 @@ export default function Footer() {
               Email:{" "}
               <a href={`mailto:${company.email}`}>{company.email}</a>
             </p>
-            <p>
-              {company.usdot} · {company.mc}
-            </p>
           </div>
         </div>
       </div>

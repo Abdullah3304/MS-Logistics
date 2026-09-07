@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { company, phoneHref } from "../data/company";
+import { submitToWeb3Forms } from "../lib/web3forms";
 import "../styles/Pages.css";
 
 const initial = {
@@ -26,24 +27,22 @@ export default function Contact() {
     setStatus(null);
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+      await submitToWeb3Forms({
+        subject: `MS Logistics Contact — ${form.subject || form.name || "Message"}`,
+        replyTo: form.email,
+        fields: {
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          message_subject: form.subject,
+          message: form.message,
+        },
       });
 
-      const raw = await res.text();
-      let data = {};
-      try {
-        data = raw ? JSON.parse(raw) : {};
-      } catch {
-        throw new Error(
-          "Server returned an invalid response. Make sure the API is running (npm run dev)."
-        );
-      }
-
-      if (!res.ok) throw new Error(data.message || "Request failed");
-      setStatus({ type: "ok", message: data.message });
+      setStatus({
+        type: "ok",
+        message: "Message received. We will respond as soon as possible.",
+      });
       setForm(initial);
     } catch (err) {
       const isNetwork =
@@ -52,7 +51,7 @@ export default function Contact() {
       setStatus({
         type: "err",
         message: isNetwork
-          ? "Cannot reach the server. Start the API with npm run dev and try again."
+          ? "Couldn't reach the form service. Check your connection and try again."
           : err.message || "Unable to submit right now.",
       });
     } finally {
@@ -103,8 +102,6 @@ export default function Contact() {
               <p className="eyebrow">Credentials</p>
               <h2>Operating details</h2>
               <ul>
-                <li>{company.usdot}</li>
-                <li>{company.mc}</li>
                 <li>Insured: Yes</li>
                 <li>GPS Tracking: Available</li>
                 <li>Hours: {company.hours}</li>

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { company, equipment } from "../data/company";
+import { submitToWeb3Forms } from "../lib/web3forms";
 import "../styles/Pages.css";
 
 const initial = {
@@ -42,27 +43,17 @@ export default function Quote() {
     setStatus(null);
 
     try {
-      const res = await fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+      await submitToWeb3Forms({
+        subject: `MS Logistics Quote Request — ${form.name || "New lead"}`,
+        replyTo: form.email,
+        fields: form,
       });
 
-      const raw = await res.text();
-      let data = {};
-      try {
-        data = raw ? JSON.parse(raw) : {};
-      } catch {
-        throw new Error(
-          "Server returned an invalid response. Make sure the API is running (npm run dev)."
-        );
-      }
-
-      if (!res.ok) {
-        throw new Error(data.message || "Request failed");
-      }
-
-      setStatus({ type: "ok", message: data.message });
+      setStatus({
+        type: "ok",
+        message:
+          "Quote request received. Our dispatch team will follow up shortly.",
+      });
       setForm({ ...initial, equipment: prefill });
     } catch (err) {
       const isNetwork =
@@ -71,7 +62,7 @@ export default function Quote() {
       setStatus({
         type: "err",
         message: isNetwork
-          ? "Cannot reach the server. Start the API with npm run dev and try again."
+          ? "Couldn't reach the form service. Check your connection and try again."
           : err.message || "Unable to submit right now.",
       });
     } finally {

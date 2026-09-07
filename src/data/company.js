@@ -5,7 +5,7 @@
 export const company = {
   name: "MS Logistics",
   tagline: "Driven to Deliver",
-  founded: 2021,
+  founded: 2026,
   location: "Houston, TX",
   headline: "Reliable Freight Transportation — Texas & Nationwide",
   subheadline:
@@ -14,11 +14,9 @@ export const company = {
     "MS Logistics provides dependable freight transportation and is actively available for spot freight, recurring routes, dedicated lanes, overflow capacity, and long-term contract partnerships.",
 
   // --- Replace with customer-provided values ---
-  usdot: "USDOT #0000000",
-  mc: "MC-000000",
   phone: "(786) 969-0265",
-  email: "m.miledispatch@gmail.com",
-  address: "1000 Commerce Street, Suite 200, Houston, TX 77002",
+  email: "info@mslogisticsus.com",
+  address: "725 FM 1959 RD, Houston, TX 77034",
   hours: "Mon–Fri 7:00 AM – 7:00 PM CT",
   gpsTracking: true,
 };
@@ -31,8 +29,6 @@ export function phoneHref(phone) {
 }
 
 export const trustItems = [
-  { label: "USDOT #", value: "0000000" },
-  { label: "MC #", value: "MC-000000" },
   { label: "Insured", value: "Yes" },
   { label: "GPS Tracking", value: "Available" },
   { label: "Dispatch", value: "Professional Support" },
