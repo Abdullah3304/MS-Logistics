@@ -5,6 +5,13 @@ import "../styles/Footer.css";
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  // Routes already listed in the "Capability" column — hidden from "Navigate"
+  // to avoid duplicate links.
+  const capabilityPaths = ["/fleet", "/partnerships", "/quote"];
+  const navigateLinks = navLinks.filter(
+    (link) => !capabilityPaths.includes(link.to)
+  );
+
   return (
     <footer className="site-footer">
       <div className="container site-footer__grid">
@@ -20,7 +27,7 @@ export default function Footer() {
         <div>
           <h4>Navigate</h4>
           <ul>
-            {navLinks.map((link) => (
+            {navigateLinks.map((link) => (
               <li key={link.to}>
                 <Link to={link.to}>{link.label}</Link>
               </li>

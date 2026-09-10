@@ -29,9 +29,9 @@ export function phoneHref(phone) {
 }
 
 export const trustItems = [
-  { label: "Insured", value: "Yes" },
-  { label: "GPS Tracking", value: "Available" },
-  { label: "Dispatch", value: "Professional Support" },
+  "Insured",
+  "24/7 GPS Tracking",
+  "Dispatch Support",
 ];
 
 export const sellingPoints = [

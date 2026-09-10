@@ -38,9 +38,8 @@ export default function Home() {
       <div className="trust-bar">
         <div className="container trust-bar__inner">
           {trustItems.map((item) => (
-            <div className="trust-item" key={item.label}>
-              <div className="trust-item__label">{item.label}</div>
-              <div className="trust-item__value">{item.value}</div>
+            <div className="trust-item" key={item}>
+              <div className="trust-item__value">{item}</div>
             </div>
           ))}
         </div>
