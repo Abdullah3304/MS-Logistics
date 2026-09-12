@@ -149,6 +149,54 @@ export const navLinks = [
   { to: "/fleet", label: "Fleet & Capacity" },
   { to: "/partnerships", label: "Contract Partnerships" },
   { to: "/about", label: "About" },
-  { to: "/quote", label: "Request a Quote" },
+  { to: "/driver-benefits", label: "Driver Benefits" },
   { to: "/contact", label: "Contact" },
+];
+
+/**
+ * Driver Benefits — PLACEHOLDER COPY.
+ * Replace each `copy` (and the requirements below) with MS Logistics' real
+ * driver offerings. Do NOT ship claims (pay, insurance, 401k, PTO, bonuses)
+ * that the company doesn't actually provide.
+ */
+export const driverBenefits = [
+  {
+    title: "Home Time",
+    copy: "Routes planned to get you home for reset and weekends. We respect your time off the road.",
+  },
+  {
+    title: "Competitive Pay",
+    copy: "Paid for every mile, loaded or empty, with consistent weekly settlements.",
+  },
+  {
+    title: "Health Coverage",
+    copy: "Medical, dental, and vision insurance options for you and your family.",
+  },
+  {
+    title: "Retirement Savings",
+    copy: "401(k) retirement plan to help you build long-term security.",
+  },
+  {
+    title: "Paid Time Off",
+    copy: "Paid vacation and time off so you can recharge and come back strong.",
+  },
+  {
+    title: "Modern Equipment",
+    copy: "Well-maintained trucks with the comfort and safety features that make long hauls easier.",
+  },
+  {
+    title: "Real Dispatch Support",
+    copy: "A dispatch team that treats you like a professional — responsive, fair, and on your side.",
+  },
+  {
+    title: "Referral Bonuses",
+    copy: "Earn bonuses for referring other qualified drivers to the MS Logistics team.",
+  },
+];
+
+export const driverRequirements = [
+  "Valid Class A CDL or non-CDL driver's license",
+  "Minimum 12 months verifiable driving experience (training considered case-by-case)",
+  "Clean driving record and DOT compliance",
+  "Commitment to safety, customer care, and professionalism",
 ];

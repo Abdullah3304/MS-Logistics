@@ -5,6 +5,7 @@ import Services from "./pages/Services";
 import Fleet from "./pages/Fleet";
 import Partnerships from "./pages/Partnerships";
 import About from "./pages/About";
+import DriverBenefits from "./pages/DriverBenefits";
 import Quote from "./pages/Quote";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="fleet" element={<Fleet />} />
           <Route path="partnerships" element={<Partnerships />} />
           <Route path="about" element={<About />} />
+          <Route path="driver-benefits" element={<DriverBenefits />} />
           <Route path="quote" element={<Quote />} />
           <Route path="contact" element={<Contact />} />
           <Route path="privacy" element={<Privacy />} />

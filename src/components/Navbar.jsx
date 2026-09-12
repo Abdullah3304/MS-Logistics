@@ -63,7 +63,7 @@ export default function Navbar() {
             className="btn btn--primary nav__cta"
             onClick={() => setOpen(false)}
           >
-            Get Capacity
+            Request a Quote
           </Link>
         </nav>
       </div>

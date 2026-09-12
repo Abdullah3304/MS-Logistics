@@ -206,6 +206,36 @@
   color: var(--text-muted-light);
 }
 
+.driver-reqs {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+}
+
+.driver-reqs li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--text-muted-light);
+  line-height: 1.5;
+}
+
+.driver-reqs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .driver-reqs {
+    grid-template-columns: 1fr;
+  }
+}
+
 .about-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
